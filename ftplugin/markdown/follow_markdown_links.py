@@ -58,13 +58,14 @@ def follow_link():
     if link.startswith('[['):
         text = link[2:-2]
         link = ''
+        if not text: return
     else:
         # extract link text and link url
         link = re.findall(r'^\[([^]]*)\]\(([^)]*)\)$', link)
         if not link: return
 
-    # if not local link then stop
-    text, link = link[0]
+        # if not local link then stop
+        text, link = link[0]
     if not _is_local_link(link): return
 
     # Support [Text]() cases; Assume Text as link
