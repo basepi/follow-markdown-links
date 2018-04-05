@@ -1,5 +1,5 @@
 import re
-from urlparse import urlparse
+from urllib.parse import urlparse
 from vim import *
 
 DEFAULT_EXTENSION = 'md'
